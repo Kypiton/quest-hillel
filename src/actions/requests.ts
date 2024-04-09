@@ -1,5 +1,7 @@
 'use server';
 
+import db from '@/modules/db';
+
 export const getData = async (id?: number) => {
 	const request = id ? `quests/${id}` : 'quests';
 	try {
@@ -27,3 +29,11 @@ export const postData = async (values: any) => {
 		alert('Не удалось отправить запрос')
 	}
 };
+
+export const getQuests = async () => {
+	try {
+		return await db.quest.findMany({});
+	} catch (error) {
+		console.error(error);
+	}
+}
