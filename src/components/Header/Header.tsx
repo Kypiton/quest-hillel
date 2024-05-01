@@ -16,7 +16,10 @@ export default function Header() {
           </li>
         ))}
       </ul>
-      <Login />
+      <Link href='tel:+8-(800)-333-55-99' className='hover:text-orange-500'>
+        8 (800) 333-55-99
+      </Link>
+      {/* <Login />  */}
     </header>
   );
 }

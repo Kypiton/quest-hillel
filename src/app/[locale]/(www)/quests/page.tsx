@@ -5,13 +5,15 @@ import { getData } from '@/actions/requests';
 import { tabs } from '@/mock/data';
 import { Quest } from '@/interfaces/quest.type';
 import db from '@/modules/db';
+import initTranslations from '../../../../i18n';
 
 export default async function Quests() {
   const quests = await db.quest.findMany();
+  // const { t } = await initTranslations(locale, ['defalut']);
   return (
     <>
       <p className='text-orange-500'>квесты в Санкт-Петербурге</p>
-      <h1 className='font-extrabold text-6xl text-white pt-[5px]'>Выберите тематику</h1>
+      <h1 className='font-extrabold text-6xl text-white pt-[5px]'>Выберите жанр</h1>
       <ul className='flex items-center justify-between font-bold text-sm text-white pt-[48px]'>
         {tabs.map((tab, index) => (
           <li key={tab.id} className='flex items-center justify-center gap-3'>

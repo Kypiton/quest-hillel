@@ -1,4 +1,10 @@
+'use client';
+
+import LanguageChanger from '@/components/LanguageChanger/LanguageChanger';
+import { useTranslation } from 'react-i18next';
+
 export default function Contacts() {
+  const { t } = useTranslation();
   return (
     <div>
       <div className='flex flex-col mb-12 pb-8 border-b'>
@@ -7,7 +13,7 @@ export default function Contacts() {
       </div>
       <div className='flex justify-between text-white'>
         <div>
-          <p className='mb-2 font-bold'>Адрес</p>
+          <p className='mb-2 font-bold'>{t('address')}</p>
           <p className='mb-9 max-w-[240px]'>Санкт-Петербург, Набережная реки Карповка, д 5П</p>
           <p className='mb-2 font-bold'>Режим работы</p>
           <p className='mb-9'>Ежедневно, с 9:00 до 20:00</p>
